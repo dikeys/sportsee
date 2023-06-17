@@ -1,0 +1,15 @@
+.nutrient{
+    display: grid;
+    grid-template-columns: 20% 10%;
+    justify-content: center;
+    align-items: center;
+   
+    &__type{
+        font-weight: 700;
+        color: #74798C;
+    }
+    &__tooltip{
+        background: white;
+        padding :8px
+    }
+}

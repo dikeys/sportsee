@@ -1,0 +1,57 @@
+.dashboard {
+    &__wrapper {
+        display: flex;
+        
+    }
+    &__content{
+        width: 100%;
+        padding: 68px 100px 88px 109px;
+    }
+    &__name{
+        font-size: 48px;
+        line-height: 24px;
+        margin-bottom: 41px;
+        &--color{
+            color: $primary;
+        }
+    }
+    &__graph-content{
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+    &__objectif{
+        font-size: 18px;
+        font-weight: 400;
+    }
+    &__graph-heading{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 44% 10% 20%;
+    }
+    &__weight-dot, &__calories-dot{
+        display: inline-block;
+        width: 8px;
+        height:8px;
+        border-radius: 20px;
+        margin-right: 10px;
+    }
+    &__weight-dot{
+        background: black;
+    }
+     &__calories-dot{
+        background: red;
+     }
+    &__heading-activity{
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+    &__caloriesburned{
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    &__activity{
+        display: flex;
+    }
+}

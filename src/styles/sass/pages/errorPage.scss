@@ -1,0 +1,59 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $primary;
+    align-items: center;
+
+    &__code {
+        color: $primary;
+        height: 171px;
+        font-size: 288px;
+        line-height: 410.69px;
+    }
+
+    &__message {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 51.34px;
+
+    }
+
+    &__link-home {
+        color: $primary;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25.67px;
+
+        &:active,
+        &:visited {
+            color: $primary;
+        }
+    }
+
+    @media #{$mobile} {
+        &__code {
+
+            font-size: 96px;
+
+        }
+
+        &__message {
+            font-size: 18px;
+            text-align: center;
+            width: 300px;
+        }
+
+        &--break {
+            overflow-wrap: break-word;
+        }
+
+        &__link-home {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 176px;
+        }
+    }
+
+}

@@ -1,0 +1,23 @@
+.sidebar {
+    background: $secondary;
+    color: $tertiary;
+    width: 117px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-end;
+    &__nav{
+        margin-bottom: 100%;
+    }
+    &__copyright {
+        position: relative;
+        transform: rotate(-90deg);
+        width: 200px;
+        top: 4%;
+        
+
+    }
+}
