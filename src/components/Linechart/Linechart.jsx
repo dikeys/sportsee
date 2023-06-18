@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { CartesianGrid, Label, Legend, Line, LineChart, Text, Tooltip, XAxis, YAxis } from 'recharts';
+import { CartesianGrid,  Legend, Line, LineChart, Text, Tooltip, XAxis, YAxis } from 'recharts';
 import callUserApi from '../../data/API/CallApi';
 
 
@@ -8,7 +8,6 @@ const Linechart = () => {
     const [user, setUser] = useState({})
     const params = useParams()
     const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
-    const [selectedSessionLength, setSelectedSessionLength] = useState(null);
     useEffect(() => {
         const userData = async () => {
             const userInfor = await callUserApi(`http://localhost:3000/user/${params.id}/average-sessions`)
@@ -17,7 +16,7 @@ const Linechart = () => {
         userData()
     }, [params.id])
     const dataUser = user
-    // console.log(dataUser.sessions)
+   
 
 
     const TooltipText = payload => {
@@ -48,33 +47,33 @@ const Linechart = () => {
 
     const renderLegend = () => {
         return (
-        <p className='linechart__heading'>
-            Durée moyenne des sessions
-        </p>
+            <p className='linechart__heading'>
+                Durée moyenne des sessions
+            </p>
         );
     }
 
     return (
         <React.Fragment>
-            <LineChart width={388} height={363} data={dataUser.sessions}
-                margin={{ top: 5, right: 20, left: 20, bottom: 5 }} dot={{ r: 4, strokeWidth: 2, stroke: '#8884d8', fill: '#fff' }}>
-
-                <Text>frresfgggerg</Text>
-                <CartesianGrid strokeDasharray="3 3" fill="red" vertical={false} horizontal={false} />
+            <LineChart width={388} style={{ background: 'red', borderRadius: '10px' }} height={363} data={dataUser.sessions}
+                 >
+                {/* <CartesianGrid strokeDasharray="3 3" fill="red" vertical={false} horizontal={false} /> */}
                 <Line xAxisId="sessionLength" type="natural" isAnimationActive={false} dataKey="sessionLength" stroke="#fff" strokeWidth={2} dot={false} />
                 <XAxis
                     dataKey={(day) => days[day.day - 1]}
                     axisLine={false}
-                    fontSize={13}
-                    fontWeight={100}
-                    width={150}
-                    xAxisId="sessionLength"
+                    fontSize={16}
+                    fontWeight={400}
                     interval={0}
-                    tick={{ fill: '#000', opacity: '0.5' }}
+                    width={10}
+                    xAxisId="sessionLength"
+                    tick={{ width:10 ,fill: '#fff', opacity: '0.5' }}
                     tickLine={false}
-                className='test'
+                    dy={-45}
+                 
                 />
-                <YAxis domain={['dataMin - 50', 'dataMax + 80']}  hide={true}/>
+                
+                <YAxis domain={['dataMin - 50', 'dataMax + 80']} hide={true} />
                 <Legend content={renderLegend} verticalAlign="top" />
 
                 <Tooltip

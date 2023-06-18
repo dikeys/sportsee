@@ -19,7 +19,7 @@ const Barchart = () => {
     }, [params.id])
 
     const data = user;
- console.log(data)
+
     return (
         <React.Fragment>
             <ResponsiveContainer width={'100%'} height={380}>

@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 import Linechart from '../../components/Linechart/Linechart';
 import Nutrient from '../../components/Nutrient/Nutrient';
 import calorieImg from "../../assets/img/nutrient/calories.svg";
+import Radarchart from '../../components/Radarchart/Radarchart';
 
 
 const Dashboard = () => {
@@ -21,7 +22,6 @@ const Dashboard = () => {
         userData()
     }, [params.id])
 
-// console.log(user)
     return (
 
         <section>
@@ -44,6 +44,7 @@ const Dashboard = () => {
                             </section>
                             <section >
                                 <Linechart />
+                                <Radarchart/>
                             </section>
                         </section>
                         <section >
